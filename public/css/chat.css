@@ -1,0 +1,204 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  color: #605c56;
+  font: 13px Helvetica, Arial;
+}
+
+.container, .row {
+  height: 100%;
+}
+
+.col {
+  height: 80%;
+}
+
+.modal {
+  background-color: white;
+  font-weight: bold;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  font-size: 1.2em;
+  text-align: center;
+  position: fixed;
+  border-style: solid;
+  border-radius: 25px;
+  border-color: black;
+  width: 400px;
+  height: 175px;
+  left: calc(50% - 200px);
+  top: calc(50% - 150px);
+  box-shadow: 10px 10px 5px #888888;
+  z-index: 2;
+  display: none;
+}
+
+#thanks {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  border-radius: 5px;
+}
+
+#myVideo {
+    background-color: orange;
+    display: none;
+    margin-left: 80%;
+    height: 75%;
+    width: 75%;
+}
+
+#send_video, #send_picture {
+  display: none;
+  margin-left: 50%;
+  width: 75%;
+  border-radius: 5px;
+  margin-left: 80%;
+
+}
+
+#m {
+  width: 65%;
+  height: 78%;
+  padding-top: 15px;
+  padding-bottom: 23px;
+  border: none;
+}
+
+#user_list {
+  height: 100%;
+  border: none;
+  border-left: 1px;
+  border-left-style: solid;
+  position: fixed;
+  left: 70%;
+}
+
+
+.message-area {
+  height: 16rem;
+}
+
+.row {
+  height: 5rem;
+}
+
+.pen{
+  width: 10rem;
+  height: 1rem;
+  display: none;
+}
+
+.eraser {
+  width: 10rem;
+  height: 5rem;
+  display: none;
+}
+
+.form {
+  width: 64.4%;
+  position: fixed;
+  bottom: 10%;
+  left: 5%;
+  border: none;
+  border-top: 1px;
+  border-top-color: black;
+  border-top-style: solid;
+}
+
+.form button {
+  width: 5rem;
+  height: 4rem;
+}
+
+video {
+  display: block;
+  margin-left: 10%;
+  height: 30%;
+  width: 30%;
+}
+
+canvas {
+  background-color: white;
+  display: none;
+  height: 75%;
+  width: 120%;
+  margin-left: -47%;
+}
+
+button {
+  border-style: none;
+  border-radius: 5px;
+  background-color: rgba(197, 154, 75, 0.48);
+}
+
+
+#current_users {
+list-style: none;
+position: fixed;
+color: black;
+font-size: 1.5rem;
+left: 68%;
+}
+
+.users {
+  border-bottom: 1px;
+  border-bottom-style: solid;
+  width: 15rem;
+
+}
+
+#messages {
+   width: 73%;
+   font-size: 1rem;
+   list-style-type: none;
+   margin-left: -10%;
+   padding: 0;
+}
+
+ #messages li {
+   padding: 5px 10px;
+  }
+
+ #messages li:nth-child(odd) {
+   background: #eee;
+   width: 65%;
+ }
+
+#login_g {
+  display: flex;
+  justify-content: center;
+  align-items: center!important;
+  color: transparent;
+  font-size: 3rem;
+  background-color: transparent!important;
+  background-image: url('/public/img/google.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-style: none;
+  border-radius: 5px;
+  position: fixed;
+  top: 25%;
+  left: 35%;
+}
+
+#login_fb {
+  display: flex;
+  justify-content: center;
+  align-items: center!important;
+  color: transparent;
+  font-size: 3rem;
+  background-color: transparent!important;
+  background-image: url('/public/img/fb.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-style: none;
+  border-radius: 5px;
+  position: fixed;
+  top: 40%;
+  left: 35%;
+}
+
+#login_fb, #login_g:focus {
+  outline: none!important;
+}

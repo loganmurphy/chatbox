@@ -1,0 +1,123 @@
+<!--
+// send video
+user typing -->
+
+
+  <title>{{title}}</title>
+  <div class='container'>
+    <!-- <video id="myVideo" class="video-js vjs-default-skin"></video>
+    <button id='send_video'>Share your video!</button> -->
+    <div class='row'>
+      <div class='col-6 message-area'>
+        <video id="myVideo" class="video-js vjs-default-skin"></video>
+        <br>
+        <button id='send_video'>Share your video!</button>
+      </div>
+      <div class='col-4 message-area'>
+        <canvas id='canvas' width="180" height="192" style="border: 1px solid black;"></canvas>
+        <!-- <br>
+        <button id='send_picture'>Share your drawing!</button> -->
+        <br><br>
+        <img id='black' class='pen' src='./public/img/black.png'><br>
+        <img id='red' class='pen' src='./public/img/red.png'><br>
+        <img id='green' class='pen' src='./public/img/green.png'><br>
+        <img id='blue' class='pen' src='./public/img/blue.png'><br>
+        <img id='erase' class='eraser' src='./public/img/eraser.png'>
+      </div>
+      <div id='user_list' class='col-2'>
+      <h2 class='users'>Current Users</h2>
+        <ul id='current_users'></ul>
+      </div>
+    </div>
+
+    <ul id="messages"></ul>
+    <form class='form'>
+      <input id="m" autocomplete="off" required placeholder="enter your message"><button>Send</button>
+      <button id='make_video'>Video</button>
+      <button id='draw_picture'>Draw</button>
+    </form>
+  </div>
+
+  <div id="modal" class="modal">
+    <div>
+      <p>
+        What's your user handle?
+      </p>
+      <form class='handle_form' action="/chatroom" method="GET">
+        <input id='user_handle' required name="handle" placeholder="awesome handle">
+        <br><br>
+        <button id='chat'>Chat!</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="/socket-io/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script src='/public/js/chat.js'></script>
+
+  <script>
+  $('document').ready(function(){
+    $('.form').hide();
+    $('#modal').show();
+    $('#chat').click(function(){
+      $('#modal').hide();
+      $('.form').show();
+    })
+    var show_vid= false;
+    var show_pic= false;
+    $('#make_video').click(function(event){
+      event.preventDefault();
+      if (show_vid == false){
+      $('#make_video').text('Cancel');
+      $('#myVideo').show();
+      $('#send_video').show();
+      $('canvas, img').hide();
+      $('#draw_picture').text('Draw');
+      return show_vid = true;
+    } else {
+      $('#make_video').text('Video');
+      $('#myVideo').hide();
+      $('#send_video').hide();
+      return show_vid = false;
+    }
+    });
+    $('#draw_picture').click(function(event){
+      $('#make_video').text('Video');
+      $('#myVideo').hide();
+      $('#send_video').hide();
+      event.preventDefault();
+      if (show_pic == false){
+      $('#draw_picture').text('Cancel');
+      $('#canvas').show();
+      $('.pen, .eraser').show();
+      $('#send_picture').show();
+      $('#send_picture').text('Done');
+      return show_pic = true;
+    } else {
+      $('#draw_picture').text('Draw');
+      $('#canvas').hide();
+      $('#send_picture').hide();
+      $('.pen, .eraser').hide();
+      return show_pic = false;
+    }
+    });
+    var send_pic = $('#send_picture');
+    $('#send_picture').click(function(event){
+      if(send_pic.text == 'Done'){
+        send_pic.text = 'Share your drawing!';
+      } else {
+        var canvas = document.getElementById('canvas');
+        canvas.toBlob(function(blob) {
+          var newImg = document.createElement('img'),
+          url = URL.createObjectURL(blob);
+          newImg.onload = function() {
+              // no longer need to read the blob so it's revoked
+            URL.revokeObjectURL(url);
+          };
+          newImg.src = url;
+          document.body.appendChild(newImg);
+        });
+      }
+    });
+  });
+  </script>
