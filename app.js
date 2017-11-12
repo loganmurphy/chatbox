@@ -12,23 +12,9 @@ var FacebookStrategy = require('passport-facebook').Strategy;
 
 var logger = require('morgan');
 var session = require('express-session');
-
 var db = require('./models');
-
 var authorizationURL = "https://accounts.google.com/o/oauth2/auth";
 var clientID = authConfig.web.client_id;
-
-
-var env = process.env.NODE_ENV || 'development';
-var config = require(__dirname + '/app./config/config.json')[env];
-var db = {};
-if (config.use_env_variable) {
-   var sequelize = new Sequelize(process.env[config.use_env_variable]);
-} else {
-   var sequelize = new Sequelize(config.database, config.username, config.password, config);
-}
-
-
 const body_parser = require('body-parser');
 
 
@@ -44,13 +30,6 @@ function extractProfile (profile) {
   };
 }
 
-// function ensureAuthenticated (req, res, next) {
-//   if (req.isAuthenticated()) {
-//     return next();
-//   }
-//   res.redirect('/');
-// }
-
 passport.serializeUser(function(user, done) {
   // done(null, user.id);
   done(null, user);
@@ -64,9 +43,12 @@ passport.deserializeUser(function(obj, done) {
 passport.use(new GoogleStrategy({
     clientID: clientID,
     clientSecret: authConfig.web.client_secret,
-    // callbackURL: "http://localhost:3000/auth/google/callback"
-    callbackURL: "https://todolist.logancodes.com/auth/google/callback"
+    // callbackURL: "http://localhost:5000/auth/google/callback"
+    // callbackURL: "https://todolist.logancodes.com/auth/google/callback"
+    callbackURL: "https://git.heroku.com/chattboxx.git/auth/google/callback"
+
   },
+
   function(accessToken, refreshToken, profile, cb){
     var user = extractProfile(profile);
     // store profile in db, or fetch it if a record exists
@@ -80,8 +62,10 @@ passport.use(new GoogleStrategy({
   passport.use(new FacebookStrategy({
     clientID: 1622507121145224, //FACEBOOK_APP_ID,
     clientSecret: clientSecret,//FACEBOOK_APP_SECRET,
-    callbackURL: "http://logancodes.auth0.com/login/callback"
-    // callbackURL: "http://localhost:3000/auth/facebook/callback"
+    // callbackURL: "http://logancodes.auth0.com/login/callback"
+    // callbackURL: "http://localhost:5000/auth/facebook/callback"
+    callbackURL: "https://git.heroku.com/chattboxx.git/auth/facebook/callback"
+
   },
   function(accessToken, refreshToken, profile, cb) {
     // console.log(profile);
@@ -212,8 +196,11 @@ io.on('connection', function(socket){
     io.emit('handles', {handles: handleStrings});
 
   })
+
 });
-var PORT = process.env.PORT || 3000;
-app.listen(PORT, function () {
-  console.log('Now up on PORT 3000');
+db.sequelize.sync().then(function() {
+  var PORT = process.env.PORT || 3000;
+  app.listen(PORT, function () {
+    console.log('Now up on PORT 3000');
+  });
 });
