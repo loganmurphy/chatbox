@@ -4,7 +4,7 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
-var authConfig = require('./config/auth');
+var authConfig = require('/config/auth');
 var passport = require('passport');
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
@@ -57,7 +57,7 @@ passport.use(new GoogleStrategy({
     clientID: clientID,
     clientSecret: authConfig.web.client_secret,
     // callbackURL: "http://localhost:5000/auth/google/callback"
-    callbackURL: "https://git.heroku.com/chattboxx.git/auth/google/callback"
+    callbackURL: "https://chattboxx.herokuapp.com/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, cb){
     var user = extractProfile(profile);
