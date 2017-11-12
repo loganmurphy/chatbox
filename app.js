@@ -73,8 +73,9 @@ passport.use(new GoogleStrategy({
     clientID: 1622507121145224, //FACEBOOK_APP_ID,
     clientSecret: clientSecret,//FACEBOOK_APP_SECRET,
     // callbackURL: "http://logancodes.auth0.com/login/callback"
-    callbackURL: "http://localhost:5000/auth/facebook/callback"
+    // callbackURL: "http://localhost:5000/auth/facebook/callback"
     // callbackURL: "https://git.heroku.com/chattboxx.git/auth/facebook/callback"
+    callbackURL: "https://chattboxx.herokuapp.com/auth/facebook/callback"
 
   },
   function(accessToken, refreshToken, profile, cb) {
@@ -116,7 +117,6 @@ app.use(body_parser.urlencoded({extended: false}));
 // });
 
 app.set('view engine', 'hbs');
-
 
 
 app.get('/auth/facebook', passport.authenticate('facebook', {scope: ['public_profile', 'email']}));
@@ -166,8 +166,6 @@ io.on('connection', function(socket){
   console.log('emitted');
 
   })
-
-
 
   socket.on('chat message', function(msg){
     let handle = handles.get(socket.id)
