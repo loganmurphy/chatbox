@@ -10,7 +10,6 @@
     "use_env_variable": "DATABASE_URL",
     "username": "elibflovulfepo",
     "port": 5432,
-    "password": 4fd513d6946ad4483bda9bbee2f4490c0ec53974631808190b8596e674d109a5,
     "database": "dfa3hl7252m30q",
     "host": "ec2-107-21-205-25.compute-1.amazonaws.com",
     "dialect": "postgres"
