@@ -102,7 +102,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use('/public', express.static('public'));
 app.use('/node_modules', express.static('node_modules'));
-app.use('/socket.io',
+app.use('/socket-io',
   express.static('./socket.io-client/dist'));
 app.use(body_parser.urlencoded({extended: false}));
 // app.use(function (request, response, next) {
