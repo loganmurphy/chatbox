@@ -210,7 +210,7 @@ io.on('connection', function(socket){
 });
 db.sequelize.sync().then(function() {
   var PORT = process.env.PORT || 3000;
-  app.listen(PORT, function () {
+  http.listen(PORT, function () {
     console.log('Now up on PORT 3000');
   });
 });
