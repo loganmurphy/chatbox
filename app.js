@@ -72,9 +72,9 @@ passport.use(new GoogleStrategy({
   passport.use(new FacebookStrategy({
     clientID: 1622507121145224, //FACEBOOK_APP_ID,
     clientSecret: clientSecret,//FACEBOOK_APP_SECRET,
-    callbackURL: "https://logancodes.auth0.com/login/callback"
+    // callbackURL: "https://logancodes.auth0.com/login/callback"
     // callbackURL: "http://localhost:5000/auth/facebook/callback"
-    // callbackURL: "https://chattboxx.herokuapp.com/auth/facebook/callback"
+    callbackURL: "https://chattboxx.herokuapp.com/auth/facebook/callback"
   },
   function(accessToken, refreshToken, profile, cb) {
     // console.log(profile);
