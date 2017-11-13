@@ -48,7 +48,7 @@ html, body {
 #myVideo {
     background-color: orange;
     display: none;
-    margin-left: 80%;
+    margin-left: 78%;
     height: 75%;
     width: 75%;
 }
@@ -58,7 +58,7 @@ html, body {
   margin-left: 50%;
   width: 75%;
   border-radius: 5px;
-  margin-left: 80%;
+  margin-left: 78%;
 
 }
 
@@ -134,8 +134,6 @@ canvas {
 button {
   border-style: none;
   border-radius: 5px;
-  width: 200%;
-  height: 200%;
   background-color: rgba(197, 154, 75, 0.48);
 }
 
@@ -146,6 +144,10 @@ position: fixed;
 color: black;
 font-size: 1.5rem;
 left: 68%;
+}
+
+.vjs-control-bar {
+  z-index: 4;
 }
 
 .users {
@@ -211,8 +213,7 @@ left: 68%;
 }
 
 @media screen and (min-width: 300px) and (max-width: 800px){
-  button {
-    width: 5rem;
-    height: 4rem;
+  .form {
+    height: 20rem;
   }
 }
