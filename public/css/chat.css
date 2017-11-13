@@ -134,6 +134,8 @@ canvas {
 button {
   border-style: none;
   border-radius: 5px;
+  width: 200%;
+  height: 200%;
   background-color: rgba(197, 154, 75, 0.48);
 }
 
