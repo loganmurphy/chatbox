@@ -30,7 +30,7 @@ html, body {
   border-radius: 25px;
   border-color: black;
   width: 400px;
-  height: 175px;
+  height: 235px;
   left: calc(50% - 200px);
   top: calc(50% - 150px);
   box-shadow: 10px 10px 5px #888888;
@@ -89,7 +89,7 @@ html, body {
   height: 5rem;
 }
 
-.login {
+#login_row {
   margin-top: 20%;
 }
 
@@ -117,11 +117,9 @@ html, body {
 }
 
 .form button {
-  width: 5rem;
-  height: 4rem;
+  width: 6rem;
+  height: 5rem;
 }
-
-
 
 video {
   display: block;
@@ -212,6 +210,12 @@ left: 68%;
 
 #login_fb, #login_g:focus {
   outline: none!important;
+}
+
+#chat {
+  height: 4rem;
+  width: 6rem;
+}
 }
 
 @media screen and (min-width: 300px) and (max-width: 800px){
