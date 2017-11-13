@@ -57,8 +57,8 @@ passport.deserializeUser(function(obj, done) {
 passport.use(new GoogleStrategy({
     clientID: clientID,
     clientSecret: authConfig.web.client_secret,
-    callbackURL: "http://localhost:3000/auth/google/callback"
-    // callbackURL: "https://chattboxx.herokuapp.com/auth/google/callback"
+    // callbackURL: "http://localhost:3000/auth/google/callback"
+    callbackURL: "https://chattboxx.herokuapp.com/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, cb){
     var user = extractProfile(profile);
@@ -73,8 +73,8 @@ passport.use(new GoogleStrategy({
   passport.use(new FacebookStrategy({
     clientID: 1622507121145224, //FACEBOOK_APP_ID,
     clientSecret: clientSecret,//FACEBOOK_APP_SECRET,
-    callbackURL: "http://localhost:3000/auth/facebook/callback"
-    // callbackURL: "https://chattboxx.herokuapp.com/auth/facebook/callback"
+    // callbackURL: "http://localhost:3000/auth/facebook/callback"
+    callbackURL: "https://chattboxx.herokuapp.com/auth/facebook/callback"
   },
   function(accessToken, refreshToken, profile, cb) {
     // console.log(profile);
