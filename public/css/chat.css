@@ -160,6 +160,7 @@ left: 68%;
 
 .vjs-control-bar {
   z-index: 4;
+  display: none;
 }
 
 .users {
