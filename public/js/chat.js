@@ -43,7 +43,7 @@ function add_vid(blob) {
         console.log('Dang it all!', err)
         //return alert('There was an error uploading your video: ', err.message);
       }
-      alert('Successfully uploaded your video.');
+      // alert('Successfully uploaded your video.');
     });
 }
 
