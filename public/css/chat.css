@@ -207,3 +207,10 @@ left: 68%;
 #login_fb, #login_g:focus {
   outline: none!important;
 }
+
+@media screen and (min-width: 300px) and (max-width: 800px){
+  button {
+    width: 5rem;
+    height: 4rem;
+  }
+}
