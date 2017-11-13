@@ -13,8 +13,8 @@ ul {
   overflow-y: scroll;
 }
 
-ul li {
-  font-size: 1.75;
+li {
+  font-size: 2rem;
 }
 
 .container, .row {
@@ -224,8 +224,9 @@ left: 68%;
 }
 }
 
-@media screen and (min-width: 300px) and (max-width: 800px){
-  .form {
-    height: 20rem;
+@media screen and (min-width: 300px) and (max-width: 1000px){
+  .form button {
+    width: 5rem;
+    height: 4rem;
   }
 }
