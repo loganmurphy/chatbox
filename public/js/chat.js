@@ -82,7 +82,7 @@ player.on('finishRecord', function() {
       console.log('here is a v', vid_src);
 
       let v = document.createElement('video');
-      v.src = window.URL.createObjectURL(blob.video);
+      v.src = window.URL.createObjectURL(vid_src);
       $('#messages').append(v);
       v.loop = true;
       v.play();
