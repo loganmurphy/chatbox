@@ -2,8 +2,8 @@
 var BucketName = 'my-video-project';
 var bucketRegion = 'us-east-1';
 var IdentityPoolId = 'us-east-1:473bce5e-4716-4c02-9906-0fa7bff5de33';
-var accessKeyId = 'AKIAJDCHBHIDFNMW2SKA';
-var secretAccessKey = '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';
+var accessKeyId = process.env.KEY;
+var secretAccessKey = process.env.SECRET;
 var video;
 AWS.config.update({
   accessKeyId: accessKeyId,
