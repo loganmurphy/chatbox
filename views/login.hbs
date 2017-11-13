@@ -2,16 +2,14 @@
 <title>{{title}}</title>
 
 <div class='container'>
+  <h1>Welcome to the ChatBox!</h1>
   <div id="login_row" class='row'>
-    <div class='col-12'>
-      <h1>Welcome to the ChatBox!</h1>
-    </div>
-    <div class='col-xs-12 col-s-12 col-lg-6'>
+    <div class='col-6'>
       <form class='login_form' action="/auth" method="GET">
         <button id='login_g' type='submit'>Login With Google</button>
       </form>
     </div>
-    <div class='col-xs-12 col-s-12 col-lg-6'>
+    <div class='col-6'>
       <form class='login_form' action="/auth/facebook" method="GET">
         <button id='login_fb' type='submit'>Login With Facebook</button>
       </form>
