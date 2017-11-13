@@ -222,6 +222,15 @@ left: 68%;
   height: 4rem;
   width: 6rem;
 }
+
+.container h1 {
+  text-align: center;
+  margin-top: 5rem;
+  font-size: 3rem;
+}
+
+.login_form {
+  width: 80%;
 }
 
 @media screen and (min-width: 300px) and (max-width: 1000px){
