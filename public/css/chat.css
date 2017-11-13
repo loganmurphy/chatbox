@@ -197,7 +197,7 @@ left: 68%;
   border-radius: 5px;
   position: fixed;
   top: 25%;
-  left: 40%;
+  left: 35%;
 }
 
 #login_fb {
@@ -214,7 +214,7 @@ left: 68%;
   border-radius: 5px;
   position: fixed;
   top: 40%;
-  left: 40%;
+  left: 35%;
 }
 
 #login_fb, #login_g:focus {
