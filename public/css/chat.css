@@ -82,6 +82,7 @@ html, body {
 
 .message-area {
   height: 16rem;
+  overflow-y: scroll;
 }
 
 .row {
@@ -135,6 +136,7 @@ button {
   border-style: none;
   border-radius: 5px;
   background-color: rgba(197, 154, 75, 0.48);
+  font-size: 1.5rem;
 }
 
 
@@ -154,7 +156,11 @@ left: 68%;
   border-bottom: 1px;
   border-bottom-style: solid;
   width: 15rem;
+  font-size: 2.4rem;
+}
 
+#myVideo_html5_api {
+  margin-left: -.15rem;
 }
 
 #messages {
