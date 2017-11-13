@@ -9,6 +9,13 @@ html, body {
   display: none;
 }
 
+ul {
+  overflow-y: scroll;
+}
+
+ul li {
+  font-size: 1.75;
+}
 
 .container, .row {
   height: 100%;
@@ -82,7 +89,6 @@ html, body {
 
 .message-area {
   height: 16rem;
-  overflow-y: scroll;
 }
 
 .row {
