@@ -20,7 +20,8 @@ var clientID = authConfig.web.client_id;
 
 
 var env = process.env.NODE_ENV || 'development';
-
+var accessKeyId = process.env.KEY;
+var secretAccessKey = process.env.SECRET;
 const body_parser = require('body-parser');
 
 
@@ -56,8 +57,8 @@ passport.deserializeUser(function(obj, done) {
 passport.use(new GoogleStrategy({
     clientID: clientID,
     clientSecret: authConfig.web.client_secret,
-    // callbackURL: "http://localhost:3000/auth/google/callback"
-    callbackURL: "https://chattboxx.herokuapp.com/auth/google/callback"
+    callbackURL: "http://localhost:3000/auth/google/callback"
+    // callbackURL: "https://chattboxx.herokuapp.com/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, cb){
     var user = extractProfile(profile);
@@ -72,8 +73,8 @@ passport.use(new GoogleStrategy({
   passport.use(new FacebookStrategy({
     clientID: 1622507121145224, //FACEBOOK_APP_ID,
     clientSecret: clientSecret,//FACEBOOK_APP_SECRET,
-    // callbackURL: "http://localhost:5000/auth/facebook/callback"
-    callbackURL: "https://chattboxx.herokuapp.com/auth/facebook/callback"
+    callbackURL: "http://localhost:3000/auth/facebook/callback"
+    // callbackURL: "https://chattboxx.herokuapp.com/auth/facebook/callback"
   },
   function(accessToken, refreshToken, profile, cb) {
     // console.log(profile);
@@ -142,7 +143,8 @@ app.get('/', function(req, res){
 var handles = new Map();
 
 app.get('/chatroom', function(req, res){
-  var context = {title: 'Chatbox'};
+  var context = {title: 'Chatbox', accessKeyId: accessKeyId, secretAccessKey: secretAccessKey};
+  console.log(context)
   res.render('index.hbs', context);
 });
 

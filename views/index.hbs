@@ -51,6 +51,26 @@ user typing -->
     </div>
   </div>
 
+  <script>
+  var BucketName = 'my-video-project';
+  var bucketRegion = 'us-east-1';
+  var IdentityPoolId = 'us-east-1:473bce5e-4716-4c02-9906-0fa7bff5de33';
+  var accessKeyId = "{{accessKeyId}}" //process.env.KEY;
+  var secretAccessKey = "{{secretAccessKey}}"// process.env.SECRET;
+  var video;
+  AWS.config.update({
+    accessKeyId: accessKeyId,
+    secretAccessKey: secretAccessKey
+    // credentials: new AWS.CognitoIdentityCredentials({
+    //   IdentityPoolId: IdentityPoolId
+    // })
+  });
+  var s3 = new AWS.S3({
+    apiVersion: '2006-03-01',
+    params: {Bucket: BucketName}
+  });
+  console.log('Authentication worked');
+  </script>
   <script src="/socket-io/socket.io.js"></script>
   <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
   <script src='/public/js/chat.js'></script>

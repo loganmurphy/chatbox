@@ -1,23 +1,23 @@
 
-var BucketName = 'my-video-project';
-var bucketRegion = 'us-east-1';
-var IdentityPoolId = 'us-east-1:473bce5e-4716-4c02-9906-0fa7bff5de33';
-var accessKeyId = process.env.KEY;
-var secretAccessKey = process.env.SECRET;
-var video;
-AWS.config.update({
-  accessKeyId: accessKeyId,
-  secretAccessKey: secretAccessKey,
-  // credentials: new AWS.CognitoIdentityCredentials({
-  //   IdentityPoolId: IdentityPoolId
-  // })
-});
+// var BucketName = 'my-video-project';
+// var bucketRegion = 'us-east-1';
+// var IdentityPoolId = 'us-east-1:473bce5e-4716-4c02-9906-0fa7bff5de33';
+// // var accessKeyId = process.env.KEY;
+// // var secretAccessKey = process.env.SECRET;
+// var video;
+// AWS.config.update({
+//   accessKeyId: accessKeyId,
+//   secretAccessKey: secretAccessKey,
+//   // credentials: new AWS.CognitoIdentityCredentials({
+//   //   IdentityPoolId: IdentityPoolId
+//   // })
+// });
 
-var s3 = new AWS.S3({
-  apiVersion: '2006-03-01',
-  params: {Bucket: BucketName},
-});
-console.log('Authentication worked');
+// var s3 = new AWS.S3({
+//   apiVersion: '2006-03-01',
+//   params: {Bucket: BucketName},
+// });
+// console.log('Authentication worked');
 
 var canvas = document.querySelector('canvas');
 var ctx = canvas.getContext('2d');
