@@ -3,6 +3,7 @@ html, body {
   width: 100%;
   color: #605c56;
   font: 13px Helvetica, Arial;
+  font-size: 1.75rem;
 }
 
 .index {
@@ -117,6 +118,8 @@ html, body {
   height: 4rem;
 }
 
+
+
 video {
   display: block;
   margin-left: 10%;
@@ -194,7 +197,7 @@ left: 68%;
   border-radius: 5px;
   position: fixed;
   top: 25%;
-  left: 35%;
+  left: 40%;
 }
 
 #login_fb {
@@ -211,7 +214,7 @@ left: 68%;
   border-radius: 5px;
   position: fixed;
   top: 40%;
-  left: 35%;
+  left: 40%;
 }
 
 #login_fb, #login_g:focus {
