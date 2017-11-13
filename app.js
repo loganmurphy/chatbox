@@ -159,8 +159,8 @@ io.on('connection', function(socket){
 // send video
 
   socket.on('video message', function(vid_src){
+  console.log('emitted', vid_src);
   io.emit('video message', vid_src);
-  console.log('emitted');
 
   })
 

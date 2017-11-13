@@ -1,3 +1,24 @@
+
+var BucketName = 'my-video-project';
+var bucketRegion = 'us-east-1';
+var IdentityPoolId = 'us-east-1:473bce5e-4716-4c02-9906-0fa7bff5de33';
+var accessKeyId = 'AKIAJDCHBHIDFNMW2SKA';
+var secretAccessKey = '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';
+var video;
+AWS.config.update({
+  accessKeyId: accessKeyId,
+  secretAccessKey: secretAccessKey,
+  // credentials: new AWS.CognitoIdentityCredentials({
+  //   IdentityPoolId: IdentityPoolId
+  // })
+});
+
+var s3 = new AWS.S3({
+  apiVersion: '2006-03-01',
+  params: {Bucket: BucketName},
+});
+console.log('Authentication worked');
+
 var canvas = document.querySelector('canvas');
 var ctx = canvas.getContext('2d');
 ctx.strokeStyle = 'black';
@@ -8,6 +29,23 @@ ctx.lineWidth = 5;
 var mouse_down = false;
 var past;
 var current;
+
+function add_vid(blob) {
+  video = blob;
+  console.log(blob)
+  console.log(video.video.name);
+  s3.upload({
+      Key:  `videos/${video.video.name}`,
+      Body: video.video,
+      ACL: 'public-read'
+    }, function(err, data) {
+      if (err) {
+        console.log('Dang it all!', err)
+        //return alert('There was an error uploading your video: ', err.message);
+      }
+      alert('Successfully uploaded your video.');
+    });
+}
 
 canvas.addEventListener('mousedown', function (event) {
   mouse_down = true;
@@ -66,7 +104,9 @@ player.on('finishRecord', function() {
     console.log('finished recording: ', player.recordedData);
     // Try to save
     var blob = player.recordedData;
-    var vid_src = blob.video;
+    add_vid(blob)
+    var vid_name = blob.video.name;
+    var vid_src = 'https://s3.amazonaws.com/my-video-project/videos/' + vid_name;
     var v = document.createElement('video');
     v.src = window.URL.createObjectURL(blob.video);
     $('#send_video').show();
@@ -75,14 +115,14 @@ player.on('finishRecord', function() {
 
       // stuff for transfering video
 
-      socket.emit('video message', );
+      socket.emit('video message', vid_src);
       // console.log('here is a v', vid_src);
       });
       socket.on('video message', function(vid_src){
       console.log('here is a v', vid_src);
 
       let v = document.createElement('video');
-      v.src = window.URL.createObjectURL(vid_src);
+      v.src = vid_src;
       $('#messages').append(v);
       v.loop = true;
       v.play();

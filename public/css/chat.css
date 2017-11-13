@@ -63,10 +63,8 @@ li {
 #send_video, #send_picture {
   display: none;
   margin-left: 50%;
-  /*width: 75%;*/
   border-radius: 5px;
   margin-left: 78%;
-
 }
 
 #m {
