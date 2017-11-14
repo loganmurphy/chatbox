@@ -235,13 +235,19 @@ left: 68%;
 }
 
 
-@media screen and (min-width: 376px) and (max-width: 375px){
+@media screen and (min-width: 374px) and (max-width: 375px){
   h2 {
     font-size: 2.1rem;
   }
   .vjs-device-button.vjs-control {
     width: 3.8em;
     margin-left: -1.9em;
+  }
+  .col-4 {
+    margin-left: -19%;
+  }
+  canvas {
+    margin-left: 16%;
   }
 }
 
