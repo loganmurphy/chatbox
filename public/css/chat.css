@@ -300,6 +300,12 @@ left: 68%;
   }
 }
 
+@media screen and (min-width: 665px) and (max-width: 666px){
+  #user_list h2 {
+    font-size: 2.2rem;
+  }
+}
+
 @media screen and (min-width: 1023px) and (max-width: 1024px){
   #m {
     width: 57%;
