@@ -273,7 +273,13 @@ left: 68%;
     height: 3rem;
     padding-right: .35rem;
     padding-left: 0;
-
+  }
+  #login_g {
+    margin-left: 5%;
+  }
+  #login_fb {
+    font-size: 3rem;
+    margin-left: -6%;
   }
 }
 
