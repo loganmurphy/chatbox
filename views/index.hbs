@@ -79,14 +79,14 @@ user typing -->
   $('document').ready(function(){
     $('.form').hide();
     $('#modal').show();
-    $('#chat').on('touchstart click', function(){
+    $('#chat').on('touch click', function(){
       $('#modal').hide();
       $('.form').show();
       $('.index').show();
     });
     var show_vid= false;
     var show_pic= false;
-    $('#make_video').on('touchstart click', function(event){
+    $('#make_video').on('touch click', function(event){
       event.preventDefault();
       if (show_vid == false){
       $('#make_video').text('Cancel');
@@ -102,7 +102,7 @@ user typing -->
       return show_vid = false;
     }
     });
-    $('#draw_picture').on('touchstart click', function(event){
+    $('#draw_picture').on('touch click', function(event){
       $('#make_video').text('Video');
       $('#myVideo').hide();
       $('#send_video').hide();
@@ -123,7 +123,7 @@ user typing -->
     }
     });
     var send_pic = $('#send_picture');
-    $('#send_picture').on('touchstart click', function(event){
+    $('#send_picture').on('touch click', function(event){
       if(send_pic.text == 'Done'){
         send_pic.text = 'Share your drawing!';
       } else {

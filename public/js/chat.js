@@ -158,21 +158,21 @@ player.on('finishRecord', function() {
 
   function draw (past, current) {
     ctx.beginPath()
-    $('#black').on('touchstart click', function(){
+    $('#black').on('touch click', function(){
       ctx.strokeStyle = 'black';
       ctx.lineWidth = 5;
     });
-    $('#red').on('touchstart click', function(){
+    $('#red').on('touch click', function(){
       ctx.strokeStyle = 'red';
       ctx.lineWidth = 5;
-    });$('#green').on('touchstart click', function(){
+    });$('#green').on('touch click', function(){
       ctx.strokeStyle = 'green';
       ctx.lineWidth = 5;
-    });$('#blue').on('touchstart click', function(){
+    });$('#blue').on('touch click', function(){
       ctx.strokeStyle = 'blue';
       ctx.lineWidth = 5;
     });
-    $('#erase').on('touchstart click', function(){
+    $('#erase').on('touch click', function(){
       ctx.strokeStyle = 'white';
       ctx.lineWidth = 50;
     });
