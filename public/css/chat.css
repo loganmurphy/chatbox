@@ -348,6 +348,9 @@ left: 68%;
       width: 5rem;
       height: 5rem;
   }
+}
+
+@media screen and (min-width: 735px) and (max-width: 736px){
   #login_g {
     margin-top: 6rem;
     margin-left: 5%;
