@@ -264,13 +264,13 @@ left: 68%;
     margin-left: -1.9em;
   }
   .col-4 {
-    margin-left: -25%;
+    margin-left: -50%;
   }
   canvas {
-    margin-left: 13%;
+    margin-left: 5%;
   }
   .form button {
-    font-size: .9rem;
+    font-size: .75rem;
     width: 3rem;
     height: 3rem;
   }
