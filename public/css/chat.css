@@ -255,6 +255,25 @@ left: 68%;
   }
 }
 
+@media screen and (min-width: 413px) and (max-width: 414px){
+
+  .vjs-device-button.vjs-control {
+    width: 3.8em;
+    margin-left: -1.8em;
+  }
+  .col-4 {
+    margin-left: -25%;
+  }
+  canvas {
+    margin-left: 13%;
+  }
+  .form button {
+    font-size: .8rem;
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
 @media screen and (min-width: 374px) and (max-width: 375px){
   #user_list h2 {
     font-size: 2.1rem;
@@ -264,13 +283,13 @@ left: 68%;
     margin-left: -1.9em;
   }
   .col-4 {
-    margin-left: -50%;
+    margin-left: -19%;
   }
   canvas {
-    margin-left: 5%;
+    margin-left: 16%;
   }
   .form button {
-    font-size: .75rem;
+    font-size: .9rem;
     width: 3rem;
     height: 3rem;
   }
