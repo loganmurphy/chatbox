@@ -262,7 +262,7 @@ left: 68%;
     margin-left: -1.85em;
   }
   .col-4 {
-    margin-left: -16%;
+    margin-left: -17%;
   }
   canvas {
     margin-left: 12%;
@@ -271,7 +271,7 @@ left: 68%;
     font-size: .3rem;
     width: 3rem;
     height: 3rem;
-    padding-left: -.2rem;
+    padding-right: .2rem;
   }
 }
 
