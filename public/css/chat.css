@@ -361,6 +361,13 @@ left: 68%;
     font-size: 3rem;
     margin-left: -6%;
   }
+  .form button {
+    font-size: .3rem;
+    width: 3rem;
+    height: 3rem;
+    padding-right: .35rem;
+    padding-left: 0;
+  }
 }
 
 @media screen and (min-width: 666px) and (max-width: 667px){
@@ -375,6 +382,13 @@ left: 68%;
     margin-top: 6rem;
     font-size: 3rem;
     margin-left: -6%;
+  }
+  .form button {
+    font-size: .3rem;
+    width: 3rem;
+    height: 3rem;
+    padding-right: .35rem;
+    padding-left: 0;
   }
 }
 
