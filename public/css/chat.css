@@ -68,12 +68,12 @@ li {
 }
 
 #m {
-  width: 65%;
+  width: 70%;
   height: 78%;
   padding-top: 15px;
   padding-bottom: 23px;
   border: none;
-  font-size: 1.75rem;
+  font-size: 2rem;
 }
 
 #user_list {
@@ -121,8 +121,8 @@ li {
 }
 
 .form button {
-  width: 6rem;
-  height: 5rem;
+  width: 8rem;
+  height: 6rem;
 }
 
 video {
@@ -241,8 +241,8 @@ left: 68%;
   }
 
   #m {
-    width: 53%;
-    font-size: 1.15
+    width: 48%;
+    font-size: 1rem;
   }
   .form button {
     font-size: 1rem;
