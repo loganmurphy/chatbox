@@ -283,10 +283,13 @@ left: 68%;
   }
   #login_g {
     margin-left: 5%;
+    font-size: 3rem;
+    width: 10rem;
   }
   #login_fb {
     font-size: 3rem;
     margin-left: -6%;
+    width: 10rem;
   }
 }
 
