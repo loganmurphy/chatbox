@@ -349,10 +349,12 @@ left: 68%;
       height: 5rem;
   }
   #login_g {
+    margin-top: 6rem;
     margin-left: 5%;
   }
   #login_fb {
-    font-size: 3rem;
+    margin-top: 6rem;
+    font-size: 2rem;
     margin-left: -6%;
   }
 }
