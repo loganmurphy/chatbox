@@ -234,6 +234,17 @@ left: 68%;
   width: 80%;
 }
 
+
+@media screen and (min-width: 376px) and (max-width: 375px){
+  h2 {
+    font-size: 2.1rem;
+  }
+  .vjs-device-button.vjs-control {
+    width: 3.8em;
+    margin-left: -1.9em;
+  }
+}
+
 @media screen and (min-width: 300px) and (max-width: 1025px){
   #messages li {
     margin-left: 5%;
